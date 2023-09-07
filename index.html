@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>KEC</title>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/aos.css">
+   <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
+      rel="stylesheet" />
+   <svg style="display:none;width:10px">
+      <symbol id="telegram" viewBox="0 0 24 24">
+         <g>
+            <path d="M19.2,4.4L2.9,10.7c-1.1,0.4-1.1,1.1-0.2,1.3l4.1,1.3l1.6,4.8c0.2,0.5,0.1,0.7,0.6,0.7c0.4,0,0.6-0.2,0.8-0.4
+            c0.1-0.1,1-1,2-2l4.2,3.1c0.8,0.4,1.3,0.2,1.5-0.7l2.8-13.1C20.6,4.6,19.9,4,19.2,4.4z M17.1,7.4l-7.8,7.1L9,17.8L7.4,13l9.2-5.8
+            C17,6.9,17.4,7.1,17.1,7.4z" />
+         </g>
+      </symbol>
+      <symbol id="phone" viewBox="0 0 24 24" fill="none">
+         <g>
+            <path d="M13.5 2C13.5 2 15.8335 2.21213 18.8033 5.18198C21.7731 8.15183 21.9853 10.4853 21.9853 10.4853"
+               stroke-width="1.5" stroke-linecap="round" />
+            <path
+               d="M14.207 5.53564C14.207 5.53564 15.197 5.81849 16.6819 7.30341C18.1668 8.78834 18.4497 9.77829 18.4497 9.77829"
+               stroke-width="1.5" stroke-linecap="round" />
+            <path
+               d="M15.1007 15.0272L14.5569 14.5107L15.1007 15.0272ZM15.5562 14.5477L16.1 15.0642H16.1L15.5562 14.5477ZM17.9728 14.2123L17.5987 14.8623H17.5987L17.9728 14.2123ZM19.8833 15.312L19.5092 15.962L19.8833 15.312ZM20.4217 18.7584L20.9655 19.2749L20.4217 18.7584ZM19.0011 20.254L18.4573 19.7375L19.0011 20.254ZM17.6763 20.9631L17.7499 21.7095L17.6763 20.9631ZM7.81536 16.4752L8.35915 15.9587L7.81536 16.4752ZM3.00289 6.96594L2.25397 7.00613L2.25397 7.00613L3.00289 6.96594ZM9.47752 8.50311L10.0213 9.01963H10.0213L9.47752 8.50311ZM9.63424 5.6931L10.2466 5.26012L9.63424 5.6931ZM8.37326 3.90961L7.76086 4.3426V4.3426L8.37326 3.90961ZM5.26145 3.60864L5.80524 4.12516L5.26145 3.60864ZM3.69185 5.26114L3.14806 4.74462L3.14806 4.74462L3.69185 5.26114ZM11.0631 13.0559L11.6069 12.5394L11.0631 13.0559ZM15.6445 15.5437L16.1 15.0642L15.0124 14.0312L14.5569 14.5107L15.6445 15.5437ZM17.5987 14.8623L19.5092 15.962L20.2575 14.662L18.347 13.5623L17.5987 14.8623ZM19.8779 18.2419L18.4573 19.7375L19.5449 20.7705L20.9655 19.2749L19.8779 18.2419ZM17.6026 20.2167C16.1676 20.3584 12.4233 20.2375 8.35915 15.9587L7.27157 16.9917C11.7009 21.655 15.9261 21.8895 17.7499 21.7095L17.6026 20.2167ZM8.35915 15.9587C4.48303 11.8778 3.83285 8.43556 3.75181 6.92574L2.25397 7.00613C2.35322 8.85536 3.1384 12.6403 7.27157 16.9917L8.35915 15.9587ZM9.7345 9.32159L10.0213 9.01963L8.93372 7.9866L8.64691 8.28856L9.7345 9.32159ZM10.2466 5.26012L8.98565 3.47663L7.76086 4.3426L9.02185 6.12608L10.2466 5.26012ZM4.71766 3.09213L3.14806 4.74462L4.23564 5.77765L5.80524 4.12516L4.71766 3.09213ZM9.1907 8.80507C8.64691 8.28856 8.64622 8.28929 8.64552 8.29002C8.64528 8.29028 8.64458 8.29102 8.64411 8.29152C8.64316 8.29254 8.64219 8.29357 8.64121 8.29463C8.63924 8.29675 8.6372 8.29896 8.6351 8.30127C8.63091 8.30588 8.62646 8.31087 8.62178 8.31625C8.61243 8.32701 8.60215 8.33931 8.59116 8.3532C8.56918 8.38098 8.54431 8.41512 8.51822 8.45588C8.46591 8.53764 8.40917 8.64531 8.36112 8.78033C8.26342 9.0549 8.21018 9.4185 8.27671 9.87257C8.40742 10.7647 8.99198 11.9644 10.5193 13.5724L11.6069 12.5394C10.1793 11.0363 9.82761 10.1106 9.76086 9.65511C9.72866 9.43536 9.76138 9.31957 9.77432 9.28321C9.78159 9.26277 9.78635 9.25709 9.78169 9.26437C9.77944 9.26789 9.77494 9.27451 9.76738 9.28407C9.76359 9.28885 9.75904 9.29437 9.7536 9.30063C9.75088 9.30375 9.74793 9.30706 9.74476 9.31056C9.74317 9.31231 9.74152 9.3141 9.73981 9.31594C9.73896 9.31686 9.73809 9.31779 9.7372 9.31873C9.73676 9.3192 9.73608 9.31992 9.73586 9.32015C9.73518 9.32087 9.7345 9.32159 9.1907 8.80507ZM10.5193 13.5724C12.0422 15.1757 13.1923 15.806 14.0698 15.9485C14.5201 16.0216 14.8846 15.9632 15.1606 15.8544C15.2955 15.8012 15.4022 15.7387 15.4823 15.6819C15.5223 15.6535 15.5556 15.6266 15.5824 15.6031C15.5959 15.5913 15.6077 15.5803 15.618 15.5703C15.6232 15.5654 15.628 15.5606 15.6324 15.5562C15.6346 15.554 15.6367 15.5518 15.6387 15.5497C15.6397 15.5487 15.6407 15.5477 15.6417 15.5467C15.6422 15.5462 15.6429 15.5454 15.6431 15.5452C15.6438 15.5444 15.6445 15.5437 15.1007 15.0272C14.5569 14.5107 14.5576 14.51 14.5583 14.5093C14.5585 14.509 14.5592 14.5083 14.5596 14.5078C14.5605 14.5069 14.5614 14.506 14.5623 14.5051C14.5641 14.5033 14.5658 14.5015 14.5674 14.4998C14.5708 14.4965 14.574 14.4933 14.577 14.4904C14.583 14.4846 14.5885 14.4796 14.5933 14.4754C14.6028 14.467 14.6099 14.4616 14.6145 14.4584C14.6239 14.4517 14.6229 14.454 14.6102 14.459C14.5909 14.4666 14.5 14.4987 14.3103 14.4679C13.9077 14.4025 13.0391 14.0472 11.6069 12.5394L10.5193 13.5724ZM8.98565 3.47663C7.97206 2.04305 5.94384 1.80119 4.71766 3.09213L5.80524 4.12516C6.32808 3.57471 7.24851 3.61795 7.76086 4.3426L8.98565 3.47663ZM3.75181 6.92574C3.73038 6.52644 3.90425 6.12654 4.23564 5.77765L3.14806 4.74462C2.61221 5.30877 2.20493 6.09246 2.25397 7.00613L3.75181 6.92574ZM18.4573 19.7375C18.1783 20.0313 17.8864 20.1887 17.6026 20.2167L17.7499 21.7095C18.497 21.6357 19.1016 21.2373 19.5449 20.7705L18.4573 19.7375ZM10.0213 9.01963C10.9889 8.00095 11.0574 6.40678 10.2466 5.26012L9.02185 6.12608C9.44399 6.72315 9.37926 7.51753 8.93372 7.9866L10.0213 9.01963ZM19.5092 15.962C20.33 16.4345 20.4907 17.5968 19.8779 18.2419L20.9655 19.2749C22.2704 17.901 21.8904 15.6019 20.2575 14.662L19.5092 15.962ZM16.1 15.0642C16.4854 14.6584 17.086 14.5672 17.5987 14.8623L18.347 13.5623C17.2485 12.93 15.8861 13.1113 15.0124 14.0312L16.1 15.0642Z" />
+         </g>
+      </symbol>
+      <symbol id="geo" viewBox="0 0 16 16">
+         <g>
+            <path
+               d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+         </g>
+      </symbol>
+      <symbol id="mail" viewBox="0 0 24 24">
+         <g>
+            <polyline fill="none" points="4 8.2 12 14.1 20 8.2" stroke-linecap="round" stroke-linejoin="round"
+               stroke-width="2" />
+
+            <rect fill="none" height="14" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+               width="18" x="3" y="6.5" />
+         </g>
+      </symbol>
+      <symbol id="arrow2" viewBox="0 0 50 46">
+         <g>
+            <path d="M43.5515 0L50 4.63949L22.0404 46H15.5919L0 23.5923L6.44851 17.4227L18.8162 29.2682L43.5515 0Z" />
+         </g>
+      </symbol>
+      <symbol fill="transparent" id="leftArrow" viewBox="0 0 34 34">
+         <g>
+            <path d="M27 16H5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M14 7L5 16L14 25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </g>
+      </symbol>
+      <symbol fill="transparent" id="rightArrow" viewBox="0 0 34 34">
+         <g>
+            <path d="M5 16H27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M18 7L27 16L18 25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </g>
+      </symbol>
+   </svg>
+</head>
+
+<body>
+   <section class="wrapper">
+      <header class="header">
+         <section class="container">
+            <div class="header__inner">
+               <section data-smooth="top" class="header__logo">
+                  <img src="./img/image_2023-07-28_13-18-15-removebg-preview.png" alt="header">
+               </section>
+               <nav class="header__navigation">
+                  <a data-smooth="top" href="#" class="header__link">Main</a>
+                  <a data-smooth=".aboutUs" href="#" class="header__link">About</a>
+                  <a data-smooth=".pay" href="#" class="header__link">transfers</a>
+                  <a data-smooth=".reviews" href="#" class="header__link">Why us?</a>
+                  <a data-smooth=".about" href="#" class="header__link">Enterprise P2P</a>
+               </nav>
+               <section class="header__right">
+                  <button data-smooth=".contact" class="btn btn--header">Contact</button>
+               </section>
+               <button class="header__burger _burger">
+                  <span></span>
+               </button>
+            </div>
+         </section>
+      </header>
+      <main>
+         <div class="intro">
+            <video class="video" id="heroVideo" autoplay='true' muted loop playsinline>
+               <source src="./img/intro/pexels-rostislav-uzunov-76708362.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+            </video>
+            <div class="container">
+               <div class="intro__inner">
+                  <article class="intro__article">
+                     <img data-aos="fade-right" data-aos-duration="1000" data-aos-offset="-2000" data-aos-delay="700"
+                        src="./img/image_2023-07-28_13-17-02-removebg-preview.png" alt="">
+                     <h1 data-aos="fade-right" data-aos-duration="800" data-aos-offset="-2000" data-aos-delay="1000"
+                        class="intro__title">Currency exchange: a guarantee of stable income and financial freedom
+                        opportunities
+                     </h1>
+                     <button data-aos="fade-right" data-aos-duration="800" data-aos-offset="-2000" data-aos-delay="1300"
+                        data-smooth=".contact" class="intro__btn btn">Read More</button>
+
+                  </article>
+                  <section class="intro__right">
+                     <img data-aos="fade-left" id="iphone" data-aos-duration="1000" data-aos-offset="-200"
+                        data-aos-delay="700" class="intro__profile" src="./img/intro/MobileApp02-768x1498.png"
+                        alt="intro">
+                  </section>
+               </div>
+            </div>
+         </div>
+         <div class="aboutUs">
+            <div class="container">
+               <div class="aboutUs__inner">
+                  <h1 data-aos="fade-up" data-aos-duration="500" data-aos-offset="200" class="aboutUs__title">About Us
+                  </h1>
+                  <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="200" class="aboutUs__main shadow">
+                     <div class="aboutUs__left">
+                        <div class="aboutUs__logo">
+                           <img src="./img/Mask group.png" alt="logo">
+                        </div>
+                        <p class="aboutUs__text">
+                           Together with our team of experts, you are in safe hands of financial success.
+                           By tracking every movement in the market, we provide relevant and profitable services in
+                           electronic financial transactions. Your success is our goal, and we are ready to accompany
+                           you on the path to financial independence.
+                           to financial independence
+                        </p>
+                        <div class="aboutUs__text aboutUs__text--p">
+                           KEC is your trusted guide in the world of finance since 2017. We offer a wide range of
+                           financial services, including instant transfers of any currencies anywhere in the world,
+                           providing
+                           our investors fast and convenient transactions without unnecessary fees. Our unique service
+                           Enterprise P2P allows you to effectively make money on currency arbitrage using your
+                           company's funds along with yours.
+                           company's funds together with yours. Trust KEC - there is no limit to your success.
+                        </div>
+                        <button data-smooth=".contact" class="aboutUs__btn btn">Read More</button>
+                     </div>
+                     <div class="aboutUs__photo">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <section id="escort" class="escort">
+            <div class="escort__in">
+               <div class="container">
+                  <div class="escort__inner">
+                     <section class="escort__block">
+                        <h1 data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" class="escort__title">
+                           Support from the best experts in the field of currency exchange</h1>
+                        <p data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" class="escort__subtitle">
+                           Reliable financial support is the key to your financial stability and success!
+                           stability and success!</p>
+                        <button data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" data-smooth=".contact"
+                           class="escort__btn btn"><span>SIGN UP
+                              CONSULTATION</span></button>
+                     </section>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <div class="pay">
+            <div class="container">
+               <div class="pay__inner">
+                  <h1 data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" class="pay__title">
+                     TRANSGRANITIONS
+                     TRANSLATIONS</h1>
+                  <div class="pay__wrapper">
+                     <section class="pay__main">
+                        <p data-aos="fade-right" data-aos-duration="500" data-aos-offset="100" class="shadow pay__text">
+                           Send money to family and friends with reliability, whether within Ukraine or abroad.
+                           outside of Ukraine We are committed to providing outstanding service at affordable rates so
+                           that your
+                           sending funds is convenient and worry-free.
+                        </p>
+                        <article data-aos="fade-left" data-aos-duration="500" data-aos-offset="100" class="pay__info">
+                           <section class="pay__block">
+                              <div class="pay__photo">
+                                 <img src="./img/pay/features-1.png" alt="pay">
+                              </div>
+                              <div class="pay__right">
+                                 <h3 class="pay__subtitle">Realize a quick shipment.
+                                 </h3>
+                                 <p class="pay__about">You can choose between online shipment and a visit to the nearest
+                                    company office.</p>
+                              </div>
+                           </section>
+                           <section class="pay__block">
+                              <div class="pay__photo">
+                                 <img src="./img/pay/features-2.png" alt="pay">
+                              </div>
+                              <div class="pay__right">
+                                 <h3 class="pay__subtitle">Obtaining it is not difficult.</h3>
+                                 <p class="pay__about">Choose locations to receive transfers according to your
+                                    convenience.
+                                    </p>
+                              </div>
+                           </section>
+                           <section class="pay__block">
+                              <div class="pay__photo">
+                                 <img src="./img/pay/features-3.png" alt="pay">
+                              </div>
+                              <div class="pay__right">
+                                 <h3 class="pay__subtitle"> Highest level of reliability.</h3>
+                                 <p class="pay__about">Using the website, you will be able to monitor the status of the transfer.
+                                 </p>
+                              </div>
+                           </section>
+                        </article>
+                     </section>
+                     <div class="pay__buttons">
+                        <button data-aos="fade-right" data-aos-duration="500" data-aos-offset="100"
+                           data-smooth=".contact" class="pay__btn btn">leave a request</button>
+                        <span></span>
+                        <div data-aos="fade-left" data-aos-duration="500" data-aos-offset="100" data-smooth="bottom"
+                           class="pay__more">more</div>
+
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <div class="reviews">
+            <div class="container">
+               <div class="reviews__inner">
+                  <h1 data-aos="fade-up" data-aos-duration="500" data-aos-offset="100" class="reviews__title">Why
+                     choose us</h1>
+                  <section data-aos="fade-up" data-aos-duration="500" data-aos-offset="100"
+                     class="reviews__main shadow">
+                     <div class="reviews__slider">
+                        <div class="whyUs__block">
+                           <img class="whyUs__logo" src="./img/whyUs/service-3.png" alt="whyUs">
+                           <section class="whyUs__info">
+                              <button class="whyUs__btn">
+                                 <img class="whyUs__logo" src="./img/whyUs/service-3.png" alt="whyUs">
+                                 <h3 class="whyUs__subtitle">Why choose KEC?</h3>
+                              </button>
+                              <div class="whyUs__text">
+                                 We strive to exceed our clients' expectations by providing a personalized approach to
+                                 to each and every case. Our team is constantly evolving to find new ways
+                                 to ensure the most comfortable and effective interaction with our company.
+                                 KEC is your reliable choice for successful cooperation!
+                              </div>
+                           </section>
+                        </div>
+                        <div class="whyUs__block">
+                           <img class="whyUs__logo" src="./img/whyUs/service-1.png" alt="whyUs">
+                           <section class="whyUs__info">
+                              <button class="whyUs__btn">
+                                 <img class="whyUs__logo" src="./img/whyUs/service-1.png" alt="whyUs">
+                                 <h3 class="whyUs__subtitle">Personal manager</h3>
+                              </button>
+                              <div class="whyUs__text">
+                                 A personal manager is your guide in the world of currency exchange. He will help you develop
+                                 strategy, monitor investments, provide reporting and recommendations. Ready to
+                                 customize the portfolio to your needs and provide current market updates
+                              </div>
+                           </section>
+                        </div>
+                        <div class="whyUs__block">
+                           <img class="whyUs__logo" src="./img/whyUs/service-2.png" alt="whyUs">
+                           <section class="whyUs__info">
+                              <button class="whyUs__btn">
+                                 <img class="whyUs__logo" src="./img/whyUs/service-2.png" alt="whyUs">
+                                 <h3 class="whyUs__subtitle">Optimal safety</h3>
+                              </button>
+                              <div class="whyUs__text">
+                                 Currency exchange provides optimal security, as special programs and
+                                 algorithms effectively manage risks and find profitable bundles, minimizing possible
+                                 risks for clients.
+                              </div>
+                           </section>
+                        </div>
+                        <div class="whyUs__block">
+                           <img class="whyUs__logo" src="./img/whyUs/service-4.png" alt="whyUs">
+                           <section class="whyUs__info">
+                              <button class="whyUs__btn">
+                                 <img class="whyUs__logo" src="./img/whyUs/service-4.png" alt="whyUs">
+                                 <h3 class="whyUs__subtitle">Guarantees</h3>
+                              </button>
+                              <div class="whyUs__text">
+                                 We are your reliable partner in currency exchange and earning money. We provide
+                                 safe, efficient and stable income. As major bank payment agents,
+                                 including QIWI Bank and Unistream, we provide instant money transfers. We guarantee
+                                 security and timely fulfillment of all currency transfers. Our round-the-clock
+                                 support service is always ready to help with any questions and problems.
+                              </div>
+                           </section>
+                        </div>
+                     </div>
+                     <section class="reviews__buttons">
+                        <button class="reviews__prev">
+                           <svg class="reviews__svg">
+                              <use xlink:href="#leftArrow"></use>
+                           </svg>
+                        </button>
+                        <button class="reviews__next">
+                           <svg class="reviews__svg">
+                              <use xlink:href="#rightArrow"></use>
+                           </svg>
+                        </button>
+                     </section>
+                  </section>
+               </div>
+            </div>
+         </div>
+         <div class="about">
+            <div class="container">
+               <h1 class="about__title">Enterprise P2P
+               </h1>
+            </div>
+            <div class="about__inner">
+               <div class="about__photo">
+                  <img src="./img/about/map2.png" alt="map">
+               </div>
+               <section class="about__main">
+                  <div class="container">
+                     <div class="about__body">
+                        <p class="about__text about__text--main">Enterprise P2P is an innovative business model,
+                           that brings together multiple investors, including a company, in the process of international currency
+                           arbitrage. Our service provides clients with high profits due to the successful realization of
+                           relevant currency bundles and taking into account the legal requirements of different countries. Let
+                           Enterprise P2P become the key to your financial success by realizing the potential of global markets
+                           with us.
+                        </p>
+                        <section class="about__portfel">
+                           <h3 class="about__subtitle">
+                              A ready-made investment solution:</h3>
+                           <section class="about__grid">
+                              <div class="about__block shadow shadow--1">
+                                 <img class="about__logo" src="./img/whyUs/features-4.png" alt="about">
+                                 <section class="about__info">
+                                    <h3 class="about__name">Start</h3>
+                                    <div class="about__text">
+                                       <div class="about__line">
+                                          Attachment: <span>10000 $</span>
+                                       </div>
+                                       <div class="about__line">
+                                          Yield: <span>15%</span>
+                                       </div>
+
+                                       <button data-smooth=".contact" class="about__btn btn">
+                                          leave a request
+                                       </button>
+                                    </div>
+                                 </section>
+                              </div>
+                              <div class="about__block shadow shadow--2">
+                                 <img class="about__logo" src="./img/whyUs/features-4.png" alt="about">
+                                 <section class="about__info">
+                                    <h3 class="about__name">Advanced</h3>
+                                    <div class="about__text">
+                                       <div class="about__line">
+                                          Attachment: <span>30000 $</span>
+                                       </div>
+                                       <div class="about__line">
+                                          Yield: <span>30%</span>
+                                       </div>
+
+                                       <button data-smooth=".contact" class="about__btn btn">
+                                          leave a request
+                                       </button>
+                                    </div>
+                                 </section>
+                              </div>
+                              <div class="about__block shadow shadow--3">
+                                 <img class="about__logo" src="./img/whyUs/features-4.png" alt="about">
+                                 <section class="about__info">
+                                    <h3 class="about__name">Premium</h3>
+                                    <div class="about__text">
+                                       <div class="about__line">
+                                          Attachment: <span>65000 $</span>
+                                       </div>
+                                       <div class="about__line">
+                                          Yield: <span>45%</span>
+                                       </div>
+
+                                       <button data-smooth=".contact" class="about__btn btn">
+                                          leave a request
+                                       </button>
+                                    </div>
+                                 </section>
+                              </div>
+                              <div class="about__block shadow shadow--4">
+                                 <img class="about__logo" src="./img/whyUs/features-4.png" alt="about">
+                                 <section class="about__info">
+                                    <h3 class="about__name">Pro</h3>
+                                    <div class="about__text">
+                                       <div class="about__line">
+                                          Attachment: <span>120000 $</span>
+                                       </div>
+                                       <div class="about__line">
+                                          Yield: <span>60%</span>
+                                       </div>
+
+                                       <button data-smooth=".contact" class="about__btn btn">
+                                          leave a request
+                                       </button>
+                                    </div>
+                                 </section>
+                              </div>
+                           </section>
+                        </section>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </div>
+         <div class="contact">
+            <div class="container">
+               <div class="contact__inner">
+                  <h1 class="contact__title">CONTACT
+                     WITH US</h1>
+                  <p class="contact__subtitle">Leave
+                     request - our response will not wait long, we will contact you instantly!
+                  </p>
+               </div>
+               <form action="#" method="post">
+                  <section class="contact__line contact__line--name">
+                     <span>Name</span>
+                     <input data-input data-type="name" class="shadow contact__input" placeholder="Напишите своё имя"
+                        type="text">
+                  </section>
+                  <section class="contact__line contact__line--phone">
+                     <span>Phone Number</span>
+                     <input data-input data-type="phone" class="shadow contact__input"
+                        placeholder="+380 - - - - - - - - -" type="number">
+                  </section>
+                  <div class="contact__choose">
+                     <span>What are you interested in?</span>
+                     <div data-input data-type="info"
+                        class="contact__line contact__line--info shadow contact__choose--in">
+                        <section class="normal">
+                           <input data-info data-type="transfer" type="checkbox" name="pay" id="transfer">
+                           <label for="transfer">
+                              <span class="something toggle"></span>
+                              <span class="something">cross-border transfers</span>
+                           </label>
+                        </section>
+                        <section class="normal">
+                           <input data-info data-type="p2p" data-preSelect type="checkbox" name="pay" id="p2p">
+                           <label for="p2p">
+                              <span class="something toggle"></span>
+                              <span class="something">Enterprise P2P earnings</span>
+                           </label>
+                        </section>
+                        <section id="all" class="contact__case contact__line--sel contact__line--select ">
+                           <h3 class="contact__say">choose a portfolio:</h3>
+                           <section data-input data-type="select" id="wrapper" class="contact__wrapper">
+                              <div id='select' data-spoiler class="contact__select">
+                                 Advanced
+                              </div>
+                              <div id="spoiler" class="contact__spoiler">
+                                 <div id="choose" class="contact__links">
+                                    <div data-select="Start" class="contact__link">Start</div>
+                                    <div data-select="Advanced" class="contact__link">Advanced</div>
+                                    <div data-select="Premium" class="contact__link">Premium</div>
+                                    <div data-select="Pro" class="contact__link">Pro</div>
+                                 </div>
+                              </div>
+                           </section>
+                        </section>
+                     </div>
+
+                  </div>
+                  <button class="btn contact__btn _ajaxFormSend">Send request</button>
+               </form>
+            </div>
+         </div>
+      </main>
+      <footer class="footer shadow">
+         <div class="container">
+            <div class="footer__inner">
+               <section class="footer__info">
+                  <img src="./img/image_2023-07-28_13-18-15-removebg-preview.png" alt="">
+                  <h1 class="footer__title">Joint Stock Company KEC</h1>
+                  <p class="footer__subtitle">
+                     Bank payment agent (hereinafter referred to as the Agent/BPA) - a legal entity, which is not a credit organization or an individual entrepreneur, engaged by the Participant/Partner, which
+                     acts as a credit organization on the basis of a separate agreement to carry out activities
+                     on transfer of money funds of individuals through the UNISTRIM, QIWI-CONTACT
+                     Bank payment subagent (hereinafter - BPS) shall mean a legal entity that is not a credit institution.
+                     an organization or an individual entrepreneur who is engaged by the Bank payment agent
+                     on a contractual basis to provide services to individuals for making Transfers
+                     on the System in cases stipulated by the BPA's agreement with Participant of the System. BPA shall not have the right
+                     to engage other persons to carry out transactions of the Bank payment subagent.
+                  </p>
+               </section>
+               <section class="footer__social">
+                  <h1 class="footer__title">Links</h1>
+                  <section class="footer__links">
+                     <a target="_blank"
+                        href="#"
+                        class="footer__link">
+                        <svg class="svg footer__svg">
+                           <use xlink:href="#geo"></use>
+                        </svg>
+                        <span>5 Dilova Street, Kyiv</span>
+                     </a>
+                     <a target="_blank" href="mailto:p2p-expert@internet.ru" class="footer__link">
+                        <svg class="svg footer__svg">
+                           <use xlink:href="#mail"></use>
+                        </svg>
+                        <span>KEC-expert.com</span>
+                     </a>
+                     <a target="_blank" href="tel:+380 (99) -141-9415" class="footer__link">
+                        <svg class="svg footer__svg">
+                           <use xlink:href="#phone"></use>
+                        </svg>
+                        <span>+380 (99) -141-9415</span>
+                     </a>
+                  </section>
+               </section>
+            </div>
+         </div>
+         <div class="footer__copyright">
+            <div class="container">
+               <h6 class="footer__copyright--in">
+                  © Copyright 2023. Joint Stock Company KEC
+               </h6>
+            </div>
+         </div>
+      </footer>
+   </section>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script type="module" src="js/module.js/jquery-3.6.1.min.js"></script>
+   <script type="module" src="js/module.js/slick.min.js"></script>
+   <script type="module" src="js/app.js"></script>
+   <script type="module" src="js/module.js/send.js"></script>
+</body>
+
+</html>
